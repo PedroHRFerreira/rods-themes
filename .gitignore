@@ -1,0 +1,8 @@
+.agents/
+AGENTS.md
+node_modules/
+.pnpm-store/
+*.vsix
+package-lock.json
+yarn.lock
+.DS_Store

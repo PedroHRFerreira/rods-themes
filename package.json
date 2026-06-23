@@ -1,0 +1,50 @@
+{
+  "name": "rods-themes",
+  "displayName": "Rods Themes",
+  "description": "Temas dark/neon para VS Code inspirados nas seleções da Copa do Mundo.",
+  "version": "0.0.1",
+  "publisher": "PedroHRFerreira",
+  "license": "MIT",
+  "author": {
+    "name": "PedroHRFerreira",
+    "url": "https://github.com/PedroHRFerreira"
+  },
+  "homepage": "https://github.com/PedroHRFerreira",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PedroHRFerreira/rods-themes.git"
+  },
+  "type": "module",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "scripts": {
+    "build": "node --experimental-strip-types src/build.ts",
+    "check": "tsc --noEmit",
+    "line-check": "node --experimental-strip-types src/scripts/line-check.ts",
+    "validate": "pnpm build && pnpm check && pnpm line-check",
+    "package": "pnpm build && vsce package"
+  },
+  "contributes": {
+    "themes": [
+      { "label": "Rods Themes: Argentina Neon Black", "uiTheme": "vs-dark", "path": "./themes/argentina-neon-black-color-theme.json" },
+      { "label": "Rods Themes: Spain Neon Black", "uiTheme": "vs-dark", "path": "./themes/spain-neon-black-color-theme.json" },
+      { "label": "Rods Themes: France Neon Black", "uiTheme": "vs-dark", "path": "./themes/france-neon-black-color-theme.json" },
+      { "label": "Rods Themes: England Neon Black", "uiTheme": "vs-dark", "path": "./themes/england-neon-black-color-theme.json" },
+      { "label": "Rods Themes: Portugal Neon Black", "uiTheme": "vs-dark", "path": "./themes/portugal-neon-black-color-theme.json" },
+      { "label": "Rods Themes: Brazil Neon Black", "uiTheme": "vs-dark", "path": "./themes/brazil-neon-black-color-theme.json" },
+      { "label": "Rods Themes: Morocco Neon Black", "uiTheme": "vs-dark", "path": "./themes/morocco-neon-black-color-theme.json" },
+      { "label": "Rods Themes: Netherlands Neon Black", "uiTheme": "vs-dark", "path": "./themes/netherlands-neon-black-color-theme.json" },
+      { "label": "Rods Themes: Belgium Neon Black", "uiTheme": "vs-dark", "path": "./themes/belgium-neon-black-color-theme.json" },
+      { "label": "Rods Themes: Germany Neon Black", "uiTheme": "vs-dark", "path": "./themes/germany-neon-black-color-theme.json" }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "@vscode/vsce": "^3.9.2",
+    "typescript": "^6.0.3"
+  }
+}
