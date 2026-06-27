@@ -1,7 +1,8 @@
 # Rods Themes
 
 Coleção de temas dark/neon para VS Code inspirada nas seleções da Copa do Mundo.
-Todos os temas usam fundo preto absoluto `#000000` com cores neon do país escolhido.
+Todos os temas usam fundo preto absoluto `#000000` com cores neon de seleções
+individuais ou combinações sortidas.
 
 Desenvolvido por [PedroHRFerreira](https://github.com/PedroHRFerreira).
 
@@ -9,6 +10,8 @@ Desenvolvido por [PedroHRFerreira](https://github.com/PedroHRFerreira).
 
 - Argentina, Spain, France, England e Portugal.
 - Brazil, Morocco, Netherlands, Belgium e Germany.
+- Argentina + Morocco, Brazil + France, Spain + Portugal.
+- England + Netherlands e Belgium + Germany.
 
 ## Instalação
 

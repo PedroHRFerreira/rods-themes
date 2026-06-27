@@ -1,4 +1,5 @@
 import type { ICountryPalette } from '../theme/types.ts'
+import { createMixedCountryPalettes } from './mixed-countries.ts'
 
 const basePalette: Pick<ICountryPalette, 'foreground' | 'error' | 'warning' | 'success'> = {
   foreground: '#F8FBFF',
@@ -7,7 +8,7 @@ const basePalette: Pick<ICountryPalette, 'foreground' | 'error' | 'warning' | 's
   success: '#00FF85'
 }
 
-export const countryPalettes: ICountryPalette[] = [
+const baseCountryPalettes: ICountryPalette[] = [
   { id: 'argentina', label: 'Argentina', name: 'Rods Themes: Argentina Neon Black', primary: '#00B7FF', secondary: '#FFFFFF', tertiary: '#FFD60A', accent: '#7DE2FF', accentAlt: '#B8F7FF', muted: '#6C8CA3', ...basePalette },
   { id: 'spain', label: 'Spain', name: 'Rods Themes: Spain Neon Black', primary: '#FF1744', secondary: '#FFD600', tertiary: '#FF6D00', accent: '#FF3D71', accentAlt: '#FFF176', muted: '#A06A64', ...basePalette },
   { id: 'france', label: 'France', name: 'Rods Themes: France Neon Black', primary: '#2979FF', secondary: '#FFFFFF', tertiary: '#FF1744', accent: '#00B0FF', accentAlt: '#FF6B8A', muted: '#6E83A8', ...basePalette },
@@ -18,4 +19,9 @@ export const countryPalettes: ICountryPalette[] = [
   { id: 'netherlands', label: 'Netherlands', name: 'Rods Themes: Netherlands Neon Black', primary: '#FF6D00', secondary: '#FFFFFF', tertiary: '#2979FF', accent: '#FF9E40', accentAlt: '#7DA8FF', muted: '#9A806D', ...basePalette },
   { id: 'belgium', label: 'Belgium', name: 'Rods Themes: Belgium Neon Black', primary: '#FFD600', secondary: '#FF1744', tertiary: '#FF6D00', accent: '#FFF176', accentAlt: '#FF6B8A', muted: '#A08B64', ...basePalette },
   { id: 'germany', label: 'Germany', name: 'Rods Themes: Germany Neon Black', primary: '#FFD600', secondary: '#FF1744', tertiary: '#FFFFFF', accent: '#FFF176', accentAlt: '#FF6B8A', muted: '#9B8A75', ...basePalette }
+]
+
+export const countryPalettes: ICountryPalette[] = [
+  ...baseCountryPalettes,
+  ...createMixedCountryPalettes(baseCountryPalettes)
 ]
