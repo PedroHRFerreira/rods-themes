@@ -16,7 +16,7 @@ Desenvolvido por [PedroHRFerreira](https://github.com/PedroHRFerreira).
 ## Instalação
 
 ```bash
-code --install-extension rods-themes-0.0.1.vsix
+code --install-extension rods-themes-0.0.2.vsix
 ```
 
 Você também pode instalar pelo VS Code em Extensions, menu `...`, opção
