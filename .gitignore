@@ -1,6 +1,16 @@
 node_modules/
 .pnpm-store/
 *.vsix
+
+# Local agent/context files
+.agents/
+AGENTS.md
+
+# Local packaging/editor metadata
+.vscodeignore
+
+# Lockfiles
+pnpm-lock.yaml
 package-lock.json
 yarn.lock
 .DS_Store
