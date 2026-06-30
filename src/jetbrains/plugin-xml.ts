@@ -21,6 +21,7 @@ export const createPluginXml = (
   <id>${pluginId}</id>
   <name>${pluginName}</name>
   <version>${escapeXml(packageJson.version)}</version>
+  <idea-version since-build="241"/>
   <vendor url="${escapeXml(packageJson.author?.url ?? packageJson.homepage ?? '')}">${escapeXml(packageJson.author?.name ?? 'PedroHRFerreira')}</vendor>
 
   <description><![CDATA[
