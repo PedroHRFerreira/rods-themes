@@ -23,6 +23,7 @@
   ],
   "scripts": {
     "build": "node --experimental-strip-types src/build.ts",
+    "build:jetbrains": "node --experimental-strip-types src/jetbrains/build.ts",
     "check": "tsc --noEmit",
     "line-check": "node --experimental-strip-types src/scripts/line-check.ts",
     "validate": "pnpm build && pnpm check && pnpm line-check",

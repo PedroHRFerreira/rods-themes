@@ -1,6 +1,7 @@
 node_modules/
 .pnpm-store/
 *.vsix
+build/
 
 # Local agent/context files
 .agents/
