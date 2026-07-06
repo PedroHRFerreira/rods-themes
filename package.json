@@ -26,6 +26,10 @@
     "build:jetbrains": "node --experimental-strip-types src/jetbrains/build.ts",
     "check": "tsc --noEmit",
     "line-check": "node --experimental-strip-types src/scripts/line-check.ts",
+    "rods": "rods",
+    "rods:sync": "rods adapter sync --target codex --codex-skills-dir $HOME/.codex/skills",
+    "context:ingest": "CONTEXT_ENGINE_HOME=.context-engine context ingest .",
+    "context:stats": "CONTEXT_ENGINE_HOME=.context-engine context stats",
     "validate": "pnpm build && pnpm check && pnpm line-check",
     "package": "pnpm build && vsce package"
   },
@@ -61,6 +65,7 @@
   "devDependencies": {
     "@types/node": "^26.0.0",
     "@vscode/vsce": "^3.9.2",
+    "rods-sdk": "link:../ctx",
     "typescript": "^6.0.3"
   }
 }
