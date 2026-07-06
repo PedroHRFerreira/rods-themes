@@ -12,11 +12,13 @@ Desenvolvido por [PedroHRFerreira](https://github.com/PedroHRFerreira).
 - Brazil, Morocco, Netherlands, Belgium e Germany.
 - Argentina + Morocco, Brazil + France, Spain + Portugal.
 - England + Netherlands e Belgium + Germany.
+- Jamaica, Senegal, Cabo Verde, South Korea e Colombia.
+- Jamaica South Korea, Senegal Netherlands, Cabo Verde Brazil, Colombia France e Morocco Portugal.
 
 ## Instalação
 
 ```bash
-code --install-extension rods-themes-0.0.2.vsix
+code --install-extension rods-themes-0.0.3.vsix
 ```
 
 Você também pode instalar pelo VS Code em Extensions, menu `...`, opção
