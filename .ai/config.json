@@ -7,6 +7,15 @@
     "apiEnabled": false
   },
   "defaultTarget": "codex",
+  "targets": {
+    "codex": {
+      "enabled": true,
+      "skillsDir": "codex-skills"
+    },
+    "claude": {
+      "enabled": false
+    }
+  },
   "adapters": {
     "rtk": {
       "enabled": true
@@ -18,5 +27,12 @@
       "enabled": false,
       "mode": "opt-in"
     }
+  },
+  "generatedTemplates": {
+    "AGENTS.md": "688f49c7ab060856d40f97a321df6eb4e43f31adce07431ff834318845ac06ff",
+    ".ai/skills/review/SKILL.md": "2505f05f1527f0d85693be72337a199be3e569c44bd0216ecc185fc1b2794529",
+    ".ai/skills/architecture/SKILL.md": "2a4daea1b97cf381300664f3378dff317336d00beb5b9a00d8559e37e5684020",
+    ".ai/skills/quality/SKILL.md": "c182b63fcfc004c940ce81a527b12dfc5c9cf60a00377c2cdc5053b79948bb4f",
+    ".ai/adapters/rtk.md": "5ceff1dedeb9c7faf3792af92a70011c1748a99ec0f05347e6fa9a0aceaf17c6"
   }
 }
