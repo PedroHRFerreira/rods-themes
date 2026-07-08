@@ -7,7 +7,7 @@ interface ILineReport {
 }
 
 const lineLimit = 100
-const ignoredNames = new Set(['.git', '.pnpm-store', 'node_modules', 'pnpm-lock.yaml', 'package-lock.json'])
+const ignoredNames = new Set(['.git', 'node_modules', 'package-lock.json'])
 const includedNames = new Set(['.gitignore', '.vscodeignore', 'LICENSE'])
 const includedExtensions = new Set(['.json', '.md', '.ts'])
 

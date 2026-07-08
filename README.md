@@ -18,7 +18,7 @@ Desenvolvido por [PedroHRFerreira](https://github.com/PedroHRFerreira).
 ## Instalação
 
 ```bash
-code --install-extension rods-themes-0.0.3.vsix
+code --install-extension rods-themes-0.0.4.vsix
 ```
 
 Você também pode instalar pelo VS Code em Extensions, menu `...`, opção
@@ -49,10 +49,27 @@ Para trocar de seleção, altere apenas o valor de `workbench.colorTheme`.
 ## Desenvolvimento
 
 ```bash
-pnpm build
-pnpm validate
-pnpm package
+npm run build
+npm run validate
+npm run package
 ```
+
+## Rods SDK
+
+```bash
+npm run rods:init
+npm run rods:sync
+npm run rods:doctor
+npm run context:project:add
+npm run context:ingest
+npm run context:stats
+npm run context:search -- "search term"
+npm run context:read -- <chunkId>
+```
+
+Os comandos `context:*` usam um wrapper local que fixa a raiz do repositório e o
+`CONTEXT_ENGINE_HOME` absoluto em `.context-engine`, evitando erros de sessão
+como `unable to open database file`.
 
 ## Ajustes Visuais
 

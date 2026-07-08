@@ -2,7 +2,7 @@
   "name": "rods-themes",
   "displayName": "Rods Themes",
   "description": "Temas dark/neon para VS Code inspirados nas seleções da Copa do Mundo.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "PedroHRFerreira",
   "license": "MIT",
   "author": {
@@ -15,6 +15,7 @@
     "url": "https://github.com/PedroHRFerreira/rods-themes.git"
   },
   "type": "module",
+  "packageManager": "npm@10.8.2",
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -22,16 +23,22 @@
     "Themes"
   ],
   "scripts": {
-    "build": "node --experimental-strip-types src/build.ts",
-    "build:jetbrains": "node --experimental-strip-types src/jetbrains/build.ts",
+    "build": "node --import tsx src/build.ts",
+    "build:jetbrains": "node --import tsx src/jetbrains/build.ts",
     "check": "tsc --noEmit",
-    "line-check": "node --experimental-strip-types src/scripts/line-check.ts",
+    "line-check": "node --import tsx src/scripts/line-check.ts",
     "rods": "rods",
+    "rods:init": "rods init .",
     "rods:sync": "rods adapter sync --target codex --codex-skills-dir $HOME/.codex/skills",
-    "context:ingest": "CONTEXT_ENGINE_HOME=.context-engine context ingest .",
-    "context:stats": "CONTEXT_ENGINE_HOME=.context-engine context stats",
-    "validate": "pnpm build && pnpm check && pnpm line-check",
-    "package": "pnpm build && vsce package"
+    "rods:doctor": "rods adapter doctor . --target codex",
+    "rods:upgrade": "rods upgrade .",
+    "context:project:add": "node --import tsx src/scripts/context-command.ts project add rods-themes .",
+    "context:ingest": "node --import tsx src/scripts/context-command.ts ingest .",
+    "context:stats": "node --import tsx src/scripts/context-command.ts stats",
+    "context:search": "node --import tsx src/scripts/context-command.ts search",
+    "context:read": "node --import tsx src/scripts/context-command.ts read",
+    "validate": "npm run build && npm run check && npm run line-check",
+    "package": "npm run build && vsce package"
   },
   "contributes": {
     "themes": [
@@ -64,8 +71,9 @@
   },
   "devDependencies": {
     "@types/node": "^26.0.0",
+    "@pedrohrferreira/rods-sdk": "*",
     "@vscode/vsce": "^3.9.2",
-    "rods-sdk": "link:../ctx",
+    "tsx": "^4.20.3",
     "typescript": "^6.0.3"
   }
 }
