@@ -145,6 +145,31 @@
         "path": "./themes/colombia-neon-black-color-theme.json"
       },
       {
+        "label": "Rods Themes: Japan Neon Black",
+        "uiTheme": "vs-dark",
+        "path": "./themes/japan-neon-black-color-theme.json"
+      },
+      {
+        "label": "Rods Themes: Mexico Neon Black",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mexico-neon-black-color-theme.json"
+      },
+      {
+        "label": "Rods Themes: Uruguay Neon Black",
+        "uiTheme": "vs-dark",
+        "path": "./themes/uruguay-neon-black-color-theme.json"
+      },
+      {
+        "label": "Rods Themes: Croatia Neon Black",
+        "uiTheme": "vs-dark",
+        "path": "./themes/croatia-neon-black-color-theme.json"
+      },
+      {
+        "label": "Rods Themes: United States Neon Black",
+        "uiTheme": "vs-dark",
+        "path": "./themes/united-states-neon-black-color-theme.json"
+      },
+      {
         "label": "Rods Themes: Jamaica South Korea Neon Black",
         "uiTheme": "vs-dark",
         "path": "./themes/jamaica-south-korea-neon-black-color-theme.json"

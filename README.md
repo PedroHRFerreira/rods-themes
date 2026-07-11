@@ -13,6 +13,7 @@ Desenvolvido por [PedroHRFerreira](https://github.com/PedroHRFerreira).
 - Argentina + Morocco, Brazil + France, Spain + Portugal.
 - England + Netherlands e Belgium + Germany.
 - Jamaica, Senegal, Cabo Verde, South Korea e Colombia.
+- Japan, Mexico, Uruguay, Croatia e United States.
 - Jamaica South Korea, Senegal Netherlands, Cabo Verde Brazil, Colombia France e Morocco Portugal.
 
 ## Instalação
