@@ -1,38 +1,66 @@
 {
-  "version": 1,
+  "version": 3,
   "project": "rods-themes",
   "source": ".ai",
   "execution": {
     "mode": "cli",
     "apiEnabled": false
   },
+  "escalation": {
+    "enabled": true,
+    "policyPath": ".ai/policies/complexity.md",
+    "specsDir": "docs/rods/specs",
+    "mode": "execute"
+  },
   "defaultTarget": "codex",
   "targets": {
     "codex": {
       "enabled": true,
-      "skillsDir": "codex-skills"
-    },
-    "claude": {
-      "enabled": false
+      "hooks": true,
+      "execution": {
+        "binary": "codex",
+        "models": {
+          "simple": "gpt-5.6-sol",
+          "medium": "gpt-5.6-sol",
+          "high": "gpt-5.6-sol"
+        },
+        "args": [],
+        "timeoutMs": 900000
+      }
     }
   },
   "adapters": {
     "rtk": {
       "enabled": true
     },
-    "claude-mem": {
-      "enabled": false
-    },
     "caveman": {
       "enabled": false,
       "mode": "opt-in"
     }
+  },
+  "workflow": {
+    "mode": "codex",
+    "maxIterations": 3,
+    "failOnSeverity": "high",
+    "testCommand": {
+      "command": "npm",
+      "args": [
+        "run",
+        "validate"
+      ],
+      "timeoutMs": 600000
+    },
+    "reviewContext": true
   },
   "generatedTemplates": {
     "AGENTS.md": "688f49c7ab060856d40f97a321df6eb4e43f31adce07431ff834318845ac06ff",
     ".ai/skills/review/SKILL.md": "2505f05f1527f0d85693be72337a199be3e569c44bd0216ecc185fc1b2794529",
     ".ai/skills/architecture/SKILL.md": "2a4daea1b97cf381300664f3378dff317336d00beb5b9a00d8559e37e5684020",
     ".ai/skills/quality/SKILL.md": "c182b63fcfc004c940ce81a527b12dfc5c9cf60a00377c2cdc5053b79948bb4f",
-    ".ai/adapters/rtk.md": "5ceff1dedeb9c7faf3792af92a70011c1748a99ec0f05347e6fa9a0aceaf17c6"
+    ".ai/adapters/rtk.md": "5ceff1dedeb9c7faf3792af92a70011c1748a99ec0f05347e6fa9a0aceaf17c6",
+    ".ai/policies/complexity.md": "610ef64f16ae59593decd399fad99fe25da90e16722734474ed56cc2d295aeb8",
+    ".ai/skills/design-brainstorm/SKILL.md": "3ecfa6ac524e4399b4c827572a72bd8c533419d3ac57b902501c16560cf949d8",
+    ".ai/adapters/codex/capabilities.md": "e57a84a4e71be55b32997cd72eba56d558547e10f7588dc40e666c732d5a57d8",
+    ".rods/.gitignore": "240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d"
   }
 }
