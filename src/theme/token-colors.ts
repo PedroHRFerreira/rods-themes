@@ -1,6 +1,6 @@
-import type { ICountryPalette, ITextMateRule } from './types.ts'
+import type { IThemePalette, ITextMateRule } from './types.ts'
 
-export const createTokenColors = (palette: ICountryPalette): ITextMateRule[] => [
+export const createTokenColors = (palette: IThemePalette): ITextMateRule[] => [
   { name: 'Comment', scope: ['comment', 'punctuation.definition.comment'], settings: { foreground: palette.muted, fontStyle: 'italic' } },
   { name: 'Keyword', scope: ['keyword', 'storage.type', 'storage.modifier'], settings: { foreground: palette.primary } },
   { name: 'Function', scope: ['entity.name.function', 'support.function'], settings: { foreground: palette.accent } },

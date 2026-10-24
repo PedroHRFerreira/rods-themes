@@ -1,4 +1,13 @@
-export interface ICountryPalette {
+export interface IThemeSurfaces {
+  editor: string
+  panel: string
+  chrome: string
+  input: string
+  border: string
+  lineHighlight: string
+}
+
+export interface IThemePalette {
   id: string
   label: string
   name: string
@@ -12,6 +21,7 @@ export interface ICountryPalette {
   error: string
   warning: string
   success: string
+  surfaces: IThemeSurfaces
 }
 
 export interface ITextMateSettings {

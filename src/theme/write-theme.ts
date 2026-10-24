@@ -37,7 +37,10 @@ export const stringifyTheme = (theme: IThemeFile) => {
     `  "type": ${json(theme.type)},`,
     `  "semanticHighlighting": ${json(theme.semanticHighlighting)},`,
     '  "colors": {',
-    ...colorEntries.map(colorLine),
+    ...Array.from({ length: Math.ceil(colorEntries.length / 2) }, (_, index) =>
+      colorEntries.slice(index * 2, index * 2 + 2)
+        .map((entry, offset) => colorLine(entry, index * 2 + offset, colorEntries)).join(' ')
+    ),
     '  },',
     '  "tokenColors": [',
     ...theme.tokenColors.map(tokenLine),

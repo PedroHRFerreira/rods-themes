@@ -1,78 +1,90 @@
 # Rods Themes
 
-Coleção de temas dark/neon para VS Code inspirada nas seleções da Copa do Mundo.
-Todos os temas usam fundo preto absoluto `#000000` com cores neon de seleções
-individuais ou combinações sortidas.
+Cinco temas escuros para programar com personalidade: três com preto absoluto
+e cores vibrantes, e dois com tons de grafite e contraste mais suave.
+Disponíveis para **VS Code, IDEs JetBrains e Zed**.
 
 Desenvolvido por [PedroHRFerreira](https://github.com/PedroHRFerreira).
 
-## Temas
+## Escolha seu tema
 
-- Argentina, Spain, France, England e Portugal.
-- Brazil, Morocco, Netherlands, Belgium e Germany.
-- Argentina + Morocco, Brazil + France, Spain + Portugal.
-- England + Netherlands e Belgium + Germany.
-- Jamaica, Senegal, Cabo Verde, South Korea e Colombia.
-- Japan, Mexico, Uruguay, Croatia e United States.
-- Jamaica South Korea, Senegal Netherlands, Cabo Verde Brazil, Colombia France e Morocco Portugal.
+| Tema | Fundo do editor | Cores de destaque |
+| --- | --- | --- |
+| Rods Black Neon | Preto absoluto `#000000` | Azul e ciano |
+| Rods Black Emerald | Preto absoluto `#000000` | Verde, dourado e azul |
+| Rods Black Ember | Preto absoluto `#000000` | Vermelho, dourado e laranja |
+| Rods Dark Graphite | Grafite `#0D1117` | Laranja, verde e ciano |
+| Rods Dark Midnight | Grafite azulado `#161B26` | Azul, lilás e verde suave |
 
-## Instalação
+Os temas Black mantêm o preto absoluto no editor e nos painéis.
+Os temas Dark diferenciam editor, painéis e barras com tons de grafite.
+Os nomes e as paletas são compartilhados; a renderização varia entre editores.
 
-```bash
-code --install-extension rods-themes-0.0.4.vsix
-```
+## VS Code
 
-Você também pode instalar pelo VS Code em Extensions, menu `...`, opção
-`Install from VSIX...`.
-
-## Exemplo de settings.json
-
-```json
-{
-  "workbench.colorTheme": "Rods Themes: Brazil Neon Black",
-  "editor.fontFamily": "'Audiowide', monospace",
-  "editor.fontSize": 22,
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.wordWrap": "on",
-  "editor.stickyScroll.enabled": false
-}
-```
-
-Para trocar de seleção, altere apenas o valor de `workbench.colorTheme`.
-
-```json
-{
-  "workbench.colorTheme": "Rods Themes: Argentina Neon Black"
-}
-```
-
-## Desenvolvimento
+Instale Rods Themes pelo painel Extensions ou instale o arquivo da versão:
 
 ```bash
-npm run build
+code --install-extension rods-themes-0.1.0.vsix
+```
+
+Também é possível usar **Extensions → … → Install from VSIX…**.
+Abra **Preferences: Color Theme** e escolha um dos cinco temas.
+Exemplo de configuração:
+
+```json
+{ "workbench.colorTheme": "Rods Dark Graphite" }
+```
+
+## JetBrains
+
+Em **Settings → Plugins → ⚙ → Install Plugin from Disk…**, selecione
+`build/jetbrains/rods-themes-0.1.0.zip` e reinicie a IDE se solicitado.
+Escolha o tema em **Settings → Appearance & Behavior → Appearance → Theme**.
+O plugin inclui os temas de interface e os respectivos esquemas do editor.
+Compatível com a plataforma IntelliJ desde o build 241.
+
+## Zed
+
+O arquivo `build/zed/rods-themes.json` contém os cinco temas.
+No Linux e no macOS, copie-o para a pasta de temas do Zed:
+
+```bash
+mkdir -p ~/.config/zed/themes
+cp build/zed/rods-themes.json ~/.config/zed/themes/rods-themes.json
+```
+
+No Windows, use `%USERPROFILE%\AppData\Roaming\Zed\themes\`.
+Se usar um diretório de configuração personalizado, utilize sua pasta `themes`.
+Reabra o Zed, execute **theme selector: toggle** na paleta de comandos e
+escolha um dos cinco nomes. Veja a [documentação do Zed](https://zed.dev/docs/themes).
+Esta versão fornece instalação local; ainda não é distribuída pela loja do Zed.
+
+## Atualizando da versão 0.0.x
+
+A versão 0.1.0 substitui todos os temas de países por esta coleção de cinco.
+Após atualizar, selecione novamente um tema e atualize configurações que
+referenciem os nomes antigos. Não há aliases dos temas removidos.
+Confira as [notas da versão](CHANGELOG.md).
+
+## Desenvolvimento e distribuição
+
+```bash
+npm ci
+npm run build:all
 npm run validate
-npm run package
+npm run package:all
 ```
 
-## Rods SDK
+`package:all` valida as três saídas e gera o VSIX. Entregáveis:
+`rods-themes-0.1.0.vsix`, `build/jetbrains/rods-themes-0.1.0.zip` e
+`build/zed/rods-themes.json`. A publicação nas lojas é manual.
 
-```bash
-npm run rods:init
-npm run rods:sync
-npm run rods:doctor
-npm run context:project:add
-npm run context:ingest
-npm run context:stats
-npm run context:search -- "search term"
-npm run context:read -- <chunkId>
-```
+O catálogo fica em `src/palettes/collection.ts`. Os adaptadores ficam em
+`src/theme/`, `src/jetbrains/` e `src/zed/`. Use `npm test` para testar os
+contratos e `npm run check` para conferir os tipos.
+`npm run preview` gera uma prévia ilustrativa em `build/preview/index.html`.
 
-Os comandos `context:*` usam um wrapper local que fixa a raiz do repositório e o
-`CONTEXT_ENGINE_HOME` absoluto em `.context-engine`, evitando erros de sessão
-como `unable to open database file`.
-
-## Ajustes Visuais
-
-As paletas ficam em `src/palettes/countries.ts`.
-As regras compartilhadas de UI, TextMate e semantic tokens ficam em `src/theme/`.
+O projeto usa Rods SDK para governança e Context Engine. Comandos:
+`npm run context:ingest`, `npm run context:search -- "palettes theme"` e
+`npm run rods:upgrade:dry-run`.

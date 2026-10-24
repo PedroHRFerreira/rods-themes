@@ -1,4 +1,4 @@
-import type { ICountryPalette } from '../theme/types.ts'
+import type { IThemePalette } from '../theme/types.ts'
 import type { IPackageManifest } from './types.ts'
 import { escapeXml } from './format.ts'
 
@@ -7,12 +7,12 @@ const pluginName = 'Rods Themes'
 
 export const createPluginXml = (
   packageJson: IPackageManifest,
-  palettes: ICountryPalette[]
+  palettes: IThemePalette[]
 ) => {
   const themeProviders = palettes
     .map(
       (palette) =>
-        `    <themeProvider id="rods-themes.${escapeXml(palette.id)}" path="/themes/${escapeXml(palette.id)}-neon-black.theme.json"/>`
+        `    <themeProvider id="rods-themes.${escapeXml(palette.id)}" path="/themes/${escapeXml(palette.id)}.theme.json"/>`
     )
     .join('\n')
 
@@ -24,10 +24,15 @@ export const createPluginXml = (
   <idea-version since-build="241"/>
   <vendor url="${escapeXml(packageJson.author?.url ?? packageJson.homepage ?? '')}">${escapeXml(packageJson.author?.name ?? 'PedroHRFerreira')}</vendor>
 
-  <description><![CDATA[
+  <description><![CDATA[Five dark themes for JetBrains IDEs: three with absolute black backgrounds and two with softer graphite tones.
     <p>${escapeXml(packageJson.description)}</p>
-    <p>Dark/neon themes inspired by World Cup national teams, preserving absolute black backgrounds and bright country accents.</p>
+    <p>Três temas com preto absoluto: Rods Black Neon (azul e ciano), Rods Black Emerald (verde e dourado) e Rods Black Ember (vermelho e laranja).</p>
+    <p>Dois temas suaves: Rods Dark Graphite (grafite neutro) e Rods Dark Midnight (grafite azulado).</p>
+    <p>Após atualizar da versão 0.0.x, selecione um dos cinco novos temas em Settings → Appearance &amp; Behavior → Appearance → Theme.</p>
+    <p>Os temas de países foram substituídos por esta coleção. Consulte o README para instalação no VS Code e no Zed.</p>
   ]]></description>
+
+  <change-notes><![CDATA[<p>0.1.0: nova coleção com cinco temas, três Black e dois Dark suaves. Suporte adicional ao Zed por instalação local.</p>]]></change-notes>
 
   <depends>com.intellij.modules.platform</depends>
 

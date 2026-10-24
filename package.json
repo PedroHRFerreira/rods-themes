@@ -1,8 +1,8 @@
 {
   "name": "rods-themes",
   "displayName": "Rods Themes",
-  "description": "Temas dark/neon para VS Code inspirados nas seleções da Copa do Mundo.",
-  "version": "0.0.4",
+  "description": "Cinco temas escuros: três com preto absoluto e cores vibrantes, e dois com tons de grafite e contraste mais suave.",
+  "version": "0.1.0",
   "publisher": "PedroHRFerreira",
   "license": "MIT",
   "author": {
@@ -39,160 +39,40 @@
     "context:stats": "node --import tsx src/scripts/context-command.ts stats",
     "context:search": "node --import tsx src/scripts/context-command.ts search",
     "context:read": "node --import tsx src/scripts/context-command.ts read",
-    "validate": "npm run build && npm run check && npm run line-check",
-    "package": "npm run build && vsce package"
+    "validate": "npm run check && npm run build:all && npm test && npm run line-check",
+    "package": "npm run build && vsce package",
+    "build:zed": "node --import tsx src/zed/build.ts",
+    "build:all": "npm run build && npm run build:jetbrains && npm run build:zed",
+    "test": "node --import tsx --test src/tests/*.test.ts",
+    "package:all": "npm run validate && npm run package",
+    "preview": "npm run build && node --import tsx src/scripts/preview.ts"
   },
   "contributes": {
     "themes": [
       {
-        "label": "Rods Themes: Argentina Neon Black",
+        "label": "Rods Black Neon",
         "uiTheme": "vs-dark",
-        "path": "./themes/argentina-neon-black-color-theme.json"
+        "path": "./themes/black-neon-color-theme.json"
       },
       {
-        "label": "Rods Themes: Spain Neon Black",
+        "label": "Rods Black Emerald",
         "uiTheme": "vs-dark",
-        "path": "./themes/spain-neon-black-color-theme.json"
+        "path": "./themes/black-emerald-color-theme.json"
       },
       {
-        "label": "Rods Themes: France Neon Black",
+        "label": "Rods Black Ember",
         "uiTheme": "vs-dark",
-        "path": "./themes/france-neon-black-color-theme.json"
+        "path": "./themes/black-ember-color-theme.json"
       },
       {
-        "label": "Rods Themes: England Neon Black",
+        "label": "Rods Dark Graphite",
         "uiTheme": "vs-dark",
-        "path": "./themes/england-neon-black-color-theme.json"
+        "path": "./themes/dark-graphite-color-theme.json"
       },
       {
-        "label": "Rods Themes: Portugal Neon Black",
+        "label": "Rods Dark Midnight",
         "uiTheme": "vs-dark",
-        "path": "./themes/portugal-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Brazil Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/brazil-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Morocco Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/morocco-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Netherlands Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/netherlands-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Belgium Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/belgium-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Germany Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/germany-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Argentina + Morocco Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/argentina-morocco-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Brazil + France Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/brazil-france-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Spain + Portugal Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/spain-portugal-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: England + Netherlands Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/england-netherlands-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Belgium + Germany Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/belgium-germany-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Jamaica Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/jamaica-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Senegal Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/senegal-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Cabo Verde Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/cabo-verde-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: South Korea Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/south-korea-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Colombia Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/colombia-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Japan Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/japan-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Mexico Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/mexico-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Uruguay Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/uruguay-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Croatia Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/croatia-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: United States Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/united-states-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Jamaica South Korea Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/jamaica-south-korea-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Senegal Netherlands Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/senegal-netherlands-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Cabo Verde Brazil Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/cabo-verde-brazil-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Colombia France Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/colombia-france-neon-black-color-theme.json"
-      },
-      {
-        "label": "Rods Themes: Morocco Portugal Neon Black",
-        "uiTheme": "vs-dark",
-        "path": "./themes/morocco-portugal-neon-black-color-theme.json"
+        "path": "./themes/dark-midnight-color-theme.json"
       }
     ]
   },
@@ -200,6 +80,7 @@
     "@pedrohrferreira/rods-sdk": "^0.1.8",
     "@types/node": "^26.0.0",
     "@vscode/vsce": "^3.9.2",
+    "ajv": "^8.20.0",
     "tsx": "^4.20.3",
     "typescript": "^6.0.3"
   }

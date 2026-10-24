@@ -1,5 +1,5 @@
 import { join } from 'node:path'
-import { countryPalettes } from '../palettes/countries.ts'
+import { themePalettes } from '../palettes/collection.ts'
 import { createColorSchemeXml } from './color-scheme.ts'
 import { createPaths, readPackageManifest, resetBuildDir, runZip, writeTextFile } from './files.ts'
 import { createPluginIcon } from './plugin-icon.ts'
@@ -13,18 +13,18 @@ const pluginIcon = createPluginIcon()
 
 resetBuildDir(paths)
 
-writeTextFile(join(paths.jarContentDir, 'META-INF', 'plugin.xml'), createPluginXml(packageJson, countryPalettes))
+writeTextFile(join(paths.jarContentDir, 'META-INF', 'plugin.xml'), createPluginXml(packageJson, themePalettes))
 writeTextFile(join(paths.jarContentDir, 'META-INF', 'pluginIcon.svg'), pluginIcon)
 writeTextFile(join(paths.jarContentDir, 'META-INF', 'pluginIcon_dark.svg'), pluginIcon)
 writeTextFile(join(paths.buildDir, 'rods-themes-plugin-icon.svg'), pluginIcon)
 
-countryPalettes.forEach((palette) => {
+themePalettes.forEach((palette) => {
   writeTextFile(
-    join(paths.jarContentDir, 'themes', `${palette.id}-neon-black.theme.json`),
+    join(paths.jarContentDir, 'themes', `${palette.id}.theme.json`),
     createThemeJson(packageJson, palette)
   )
   writeTextFile(
-    join(paths.jarContentDir, 'colorSchemes', `${palette.id}-neon-black.xml`),
+    join(paths.jarContentDir, 'colorSchemes', `${palette.id}.xml`),
     createColorSchemeXml(palette)
   )
 })

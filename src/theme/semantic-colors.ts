@@ -1,7 +1,7 @@
-import type { ICountryPalette, ISemanticRule } from './types.ts'
+import type { IThemePalette, ISemanticRule } from './types.ts'
 
 export const createSemanticTokenColors = (
-  palette: ICountryPalette
+  palette: IThemePalette
 ): Record<string, string | ISemanticRule> => ({
   variable: palette.foreground,
   parameter: palette.secondary,
